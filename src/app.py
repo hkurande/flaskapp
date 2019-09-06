@@ -18,7 +18,8 @@ def main():
     myOutput = {
         "Owner": "Hemant Kurande",
         "Date": "September 5, 2019",
-        "Project Name": "Flask Docker App"
+        "Project Name": "Flask Docker App",
+        "Message": getMessage()
     }
     return json.dumps(myOutput)
 
