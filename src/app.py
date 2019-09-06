@@ -1,11 +1,14 @@
 import os
-import json
+import json, socket
 from flask import Flask
 def getMessage():
     import random
     messages = ["I am one", "I am two", "I am three", "I am four", "I am five"]
     myNum = random.randint(0, len(messages)-1)
     myMessage = messages[myNum]
+    # Get current hostname
+    hostname = socket.gethostname()
+    myMessage = "Message from host: " + hostname + ". "myMessage
     return myMessage
 
 app = Flask(__name__)
