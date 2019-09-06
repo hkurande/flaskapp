@@ -23,7 +23,7 @@ def main():
     }
     return json.dumps(myOutput)
 
-@app.route('/how are you')
+@app.route('/getMessage')
 def hello():
     return getMessage()
 
