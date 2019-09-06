@@ -4,7 +4,7 @@ from flask import Flask
 def getMessage():
     import random
     messages = ["I am one", "I am two", "I am three", "I am four", "I am five"]
-    myNum = random.randint(0, len(messages))
+    myNum = random.randint(0, len(messages)-1)
     myMessage = messages[myNum]
     return myMessage
 
