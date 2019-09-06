@@ -8,7 +8,7 @@ def getMessage():
     myMessage = messages[myNum]
     # Get current hostname
     hostname = socket.gethostname()
-    myMessage = "Message from host: " + hostname + ". "myMessage
+    myMessage = "Message from host: " + hostname + ". " + myMessage
     return myMessage
 
 app = Flask(__name__)
