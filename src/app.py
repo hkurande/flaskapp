@@ -3,7 +3,7 @@ import json, socket, traceback
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.externals import joblib
+import joblib
 from flask import Flask, jsonify, request
 
 
