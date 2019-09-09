@@ -1,0 +1,25 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: flaskapp-docker
+  name: flaskapp-docker
+  namespace: flaskapp
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'flaskapp:latest'
+  runPolicy: Serial
+  source:
+    contextDir: /src
+    git:
+      ref: master
+      uri: 'https://github.com/hkurande/flaskapp.git'
+    type: Git
+  strategy:
+    dockerStrategy:
+    type: Docker
+  triggers:
+    - type: ConfigChange
+  
