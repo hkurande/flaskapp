@@ -1,11 +1,18 @@
 import os
-import json, socket, traceback
+import json, socket, traceback, random
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 import joblib
 from flask import Flask, jsonify, request
 
+def getRandomColor():
+    colors = ["blue", "green", "red", "black", "purple", "orange"]
+    color = random.randint(0, len(colors)-1)
+    return colors[color]
+
+myColor = getRandomColor()
+print(myColor)
 
 # Load AI Model
 lr = joblib.load('model.pkl')
@@ -24,7 +31,7 @@ def getMessage():
     myMessage = messages[myNum]
     # Get current hostname
     hostname = socket.gethostname()
-    myMessage = "Message from host: " + hostname + ". " + myMessage
+    myMessage = "<h2 style='color:" + myColor + "'>Message from host: " + hostname + ".</h2> " + myMessage
     return myMessage
 
 app = Flask(__name__)

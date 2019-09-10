@@ -39,7 +39,7 @@ lr = LogisticRegression()
 lr.fit(x, y)
 
 # save the model
-from sklearn.externals import joblib
+import joblib
 joblib.dump(lr, 'model.pkl')
 model_columns = list(x.columns)
 joblib.dump(model_columns, 'model_columns.pkl')
