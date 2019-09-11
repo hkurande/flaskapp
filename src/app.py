@@ -50,6 +50,12 @@ def main():
 def hello():
     return getMessage()
 
+@app.route('/read_file')
+def read_file():
+    f = open("/data/welcome.txt")
+    contents = f.read()
+    return contents
+
 @app.route('/predict', methods = ['POST'])
 def predict():
     if lr:
