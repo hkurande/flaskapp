@@ -31,7 +31,7 @@ def getMessage():
     myMessage = messages[myNum]
     # Get current hostname
     hostname = socket.gethostname()
-    myMessage = "<h2 style='color:" + myColor + "'>Message from host: " + hostname + ".</h2> " + myMessage
+    myMessage = "<h2 style='color:" + myColor + "'>Message from Mr Wonderful: " + hostname + ".</h2> " + myMessage
     return myMessage
 
 app = Flask(__name__)
